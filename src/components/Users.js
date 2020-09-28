@@ -5,11 +5,15 @@ function Users() {
 
 	const [users, setUsers] = useState([]);
 
-	useEffect(() => {
-		const usersList = UserService.getUsers();
-		if (usersList && usersList.length > 0) {
-			setUsers(usersList);
+	async function getUsersData() {
+		const users = await UserService.getUsers();
+		if (users && users.length > 0) {
+			setUsers(users);
 		}
+	}
+	
+	useEffect(() => {
+		getUsersData();
 	}, []);
 
 	return (

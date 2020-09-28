@@ -1,7 +1,14 @@
 import users from '../data/users.json';
 
 const UserService = {
-  getUsers: function() {
+  getJsonFile: () => {
+    return new Promise((resolve) => {
+      resolve(users);
+    })
+  },
+
+  getUsers: async function() {
+    const users = await this.getJsonFile();
     return users;
   }
 }
