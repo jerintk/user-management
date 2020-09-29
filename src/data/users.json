@@ -1,17 +1,26 @@
 [
   {
-    "user_id": 1,
+    "userId": 1,
     "name": "Jerin Kuriakose",
-    "age": 30
+    "age": 30,
+    "sex": "Male",
+    "city": "Bengaluru",
+    "country": "India"
   },
   {
-    "user_id": 2,
+    "userId": 2,
     "name": "Sam Jacob",
-    "age": 25
+    "age": 25,
+    "sex": "Male",
+    "city": "California",
+    "country": "United States"
   },
   {
-    "user_id": 3,
+    "userId": 3,
     "name": "Aamir Manaf",
-    "age": 48
+    "age": 48,
+    "sex": "Male",
+    "city": "Vancouver",
+    "country": "Canada"
   }
 ]
