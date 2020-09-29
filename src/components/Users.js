@@ -18,6 +18,10 @@ function Users(props) {
 		history.push('/users/new');
 	}
 
+	function viewUser(userId) {
+		history.push('/users/profile/' + userId);
+	}
+
 	return (
 		<div>
 			<h2>Users List <button className="btn btn-primary float-right mr-3" onClick={newUser}>New User</button></h2>
@@ -44,7 +48,8 @@ function Users(props) {
 								<td>{user.city}</td>
 								<td>{user.country}</td>
 								<td>
-									<button className="btn btn-warning" onClick={(e) => editUser(user.userId, e)}>Edit</button>
+									<button className="btn btn-primary" onClick={(e) => viewUser(user.userId)}>View</button>
+									<button className="ml-3 btn btn-warning" onClick={(e) => editUser(user.userId)}>Edit</button>
 									<button className="ml-3 btn btn-danger" onClick={() => deleteUser(user.userId)}>Delete</button>
 								</td>
 							</tr>

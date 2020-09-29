@@ -10,6 +10,7 @@ import {
 import Users from './components/Users';
 import NewUser from './components/NewUser';
 import EditUser from './components/EditUser';
+import ViewUser from './components/ViewUser';
 
 function App() {
 
@@ -70,6 +71,9 @@ function App() {
             <Switch>
               <Route path="/users/new">
                 <NewUser onSaveUser={saveUser} />
+              </Route>
+              <Route path="/users/profile/:userId">
+                <ViewUser users={users} onDeleteUser={deleteUser} />
               </Route>
               <Route path="/users/edit/:userId">
                 <EditUser users={users} onUpdateUser={updateUser} />
