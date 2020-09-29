@@ -6,7 +6,7 @@ function Users(props) {
 	const users = props.users;
 	const history = useHistory();
 
-	function deleteUser(userId, event) {
+	function deleteUser(userId) {
 		props.onDeleteUser(userId);
 	}
 
@@ -45,7 +45,7 @@ function Users(props) {
 								<td>{user.country}</td>
 								<td>
 									<button className="btn btn-warning" onClick={(e) => editUser(user.userId, e)}>Edit</button>
-									<button className="ml-3 btn btn-danger" onClick={(e) => deleteUser(user.userId, e)}>Delete</button>
+									<button className="ml-3 btn btn-danger" onClick={() => deleteUser(user.userId)}>Delete</button>
 								</td>
 							</tr>
 						))}

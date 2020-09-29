@@ -9,7 +9,6 @@ import {
 } from "react-router-dom";
 import Users from './components/Users';
 import NewUser from './components/NewUser';
-import { useHistory } from 'react-router-dom';
 
 function App() {
 
@@ -26,8 +25,14 @@ function App() {
     getUsers();
   }, []);
 
-  const deleteUser = (userId) => {
-    console.log(userId);
+  function deleteUser(userId) {
+    const arr = users.filter(user => {
+      if (user.userId !== userId) {
+        return user;
+      }
+      return null;
+    });
+    setUsers([...arr]);
   }
 
   function saveUser(data) {
