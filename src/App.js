@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import Users from './components/Users';
 import NewUser from './components/NewUser';
+import EditUser from './components/EditUser';
 
 function App() {
 
@@ -40,6 +41,17 @@ function App() {
     setUsers([...users, data]);
   }
 
+  function updateUser(data) {
+    const arr = users.map(user => {
+      if (user.userId === data.userId) {
+        return data;
+      } else {
+        return user;
+      }
+    })
+    setUsers(arr);
+  }
+
   return (
     <div className="container-fluid App">
       <header className="header">
@@ -58,6 +70,9 @@ function App() {
             <Switch>
               <Route path="/users/new">
                 <NewUser onSaveUser={saveUser} />
+              </Route>
+              <Route path="/users/edit/:userId">
+                <EditUser users={users} onUpdateUser={updateUser} />
               </Route>
               <Route path="/users">
                 <Users users={users} onDeleteUser={deleteUser} />

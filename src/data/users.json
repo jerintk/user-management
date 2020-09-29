@@ -1,15 +1,15 @@
 [
   {
     "userId": 1,
-    "name": "Jerin Kuriakose",
+    "name": "Maya Ann",
     "age": 30,
-    "sex": "Male",
+    "sex": "Female",
     "city": "Bengaluru",
     "country": "India"
   },
   {
     "userId": 2,
-    "name": "Sam Jacob",
+    "name": "Jad Watson",
     "age": 25,
     "sex": "Male",
     "city": "California",
@@ -22,5 +22,61 @@
     "sex": "Male",
     "city": "Vancouver",
     "country": "Canada"
+  },
+  {
+    "userId": 4,
+    "name": "Fateh Malone",
+    "age": 24,
+    "sex": "Female",
+    "city": "London",
+    "country": "United Kingdom"
+  },
+  {
+    "userId": 5,
+    "name": "Henri Trevino",
+    "age": 65,
+    "sex": "Male",
+    "city": "Paris",
+    "country": "France"
+  },
+  {
+    "userId": 6,
+    "name": "Haleemah Mckenzie",
+    "age": 45,
+    "sex": "Female",
+    "city": "Sydney",
+    "country": "Australia"
+  },
+  {
+    "userId": 7,
+    "name": "Shivam Nicholson",
+    "age": 29,
+    "sex": "Male",
+    "city": "Colombo",
+    "country": "Sri Lanka"
+  },
+  {
+    "userId": 8,
+    "name": "Tariq Greig",
+    "age": 47,
+    "sex": "Male",
+    "city": "Dhakka",
+    "country": "Bangladesh"
+  },
+  {
+    "userId": 9,
+    "name": "Cohen Hansen",
+    "age": 38,
+    "sex": "Female",
+    "city": "Muscat",
+    "country": "Oman"
+  },
+  {
+    "userId": 10,
+    "name": "Amman Regan",
+    "age": 71,
+    "sex": "Female",
+    "city": "Dubai",
+    "country": "United Arab Emirates"
   }
 ]

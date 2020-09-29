@@ -10,8 +10,8 @@ function Users(props) {
 		props.onDeleteUser(userId);
 	}
 
-	function editUser(userId, event) {
-		props.onDeleteUser(userId);
+	function editUser(userId) {
+		history.push('/users/edit/' + userId);
 	}
 
 	function newUser() {
