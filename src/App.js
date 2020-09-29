@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import Users from './components/Users';
 import NewUser from './components/NewUser';
+import { useHistory } from 'react-router-dom';
 
 function App() {
 
@@ -25,8 +26,13 @@ function App() {
     getUsers();
   }, []);
 
-  function deleteUser(userId) {
+  const deleteUser = (userId) => {
     console.log(userId);
+  }
+
+  function saveUser(data) {
+    data.userId = users[users.length - 1].userId + 1;
+    setUsers([...users, data]);
   }
 
   return (
@@ -46,7 +52,7 @@ function App() {
             </nav>
             <Switch>
               <Route path="/users/new">
-                <NewUser />
+                <NewUser onSaveUser={saveUser} />
               </Route>
               <Route path="/users">
                 <Users users={users} onDeleteUser={deleteUser} />

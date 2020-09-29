@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
-function NewUser() {
+function NewUser(props) {
+  
+  const history = useHistory();
 
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
@@ -10,7 +13,8 @@ function NewUser() {
 
   const submitForm = (e) => {
     e.preventDefault();
-    console.log({name, age, sex, city, country});
+    props.onSaveUser({ userId: null, name, age, sex, city, country });
+		history.push('/users');
   }
 
   return (
@@ -29,11 +33,11 @@ function NewUser() {
           <div className="form-group">
             <label htmlFor="sex">Sex</label>
             <div className="form-check">
-              <input className="form-check-input" type="radio" name="sex" id="exampleRadios1" value="option1" onChange={e => setSex(e.target.value)} />
+              <input className="form-check-input" type="radio" name="sex" id="exampleRadios1" value="Male" onChange={e => setSex(e.target.value)} />
               <label className="form-check-label" htmlFor="exampleRadios1">Male</label>
             </div>
             <div className="form-check">
-              <input className="form-check-input" type="radio" name="sex" id="exampleRadios2" value="option2" onChange={e => setSex(e.target.value)} />
+              <input className="form-check-input" type="radio" name="sex" id="exampleRadios2" value="Female" onChange={e => setSex(e.target.value)} />
               <label className="form-check-label" htmlFor="exampleRadios2">Female</label>
             </div>
           </div>
