@@ -54,40 +54,31 @@ function App() {
   }
 
   return (
-    <div className="container-fluid App">
-      <header className="header">
-        <h1>User Management</h1>
-      </header>
-      <nav>
-        <Router>
-          <div>
-            <nav>
-              <ul>
-                <li>
-                  <Link to="/users">Users</Link>
-                </li>
-              </ul>
-            </nav>
-            <Switch>
-              <Route path="/users/new">
-                <NewUser onSaveUser={saveUser} />
-              </Route>
-              <Route path="/users/profile/:userId">
-                <ViewUser users={users} onDeleteUser={deleteUser} />
-              </Route>
-              <Route path="/users/edit/:userId">
-                <EditUser users={users} onUpdateUser={updateUser} />
-              </Route>
-              <Route path="/users">
-                <Users users={users} onDeleteUser={deleteUser} />
-              </Route>
-              <Route path="/">
-                <Users users={users} onDeleteUser={deleteUser} />
-              </Route>
-            </Switch>
-          </div>
-        </Router>
-      </nav>
+    <div className="App">
+      <Router>
+        <div>
+          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <h1><Link className="navbar-brand" to="/users">User Management</Link></h1>
+          </nav>
+          <Switch>
+            <Route path="/users/new">
+              <NewUser onSaveUser={saveUser} />
+            </Route>
+            <Route path="/users/profile/:userId">
+              <ViewUser users={users} onDeleteUser={deleteUser} />
+            </Route>
+            <Route path="/users/edit/:userId">
+              <EditUser users={users} onUpdateUser={updateUser} />
+            </Route>
+            <Route path="/users">
+              <Users users={users} onDeleteUser={deleteUser} />
+            </Route>
+            <Route path="/">
+              <Users users={users} onDeleteUser={deleteUser} />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </div>
   );
 }

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useHistory, useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 function ViewUser(props) {
 
+  const history = useHistory();
   const params = useParams();
   const [user, setUser] = useState({});
 
@@ -15,11 +16,16 @@ function ViewUser(props) {
       return null;
     });
   }, [props.users, params.userId]);
+
+  function goBack() {
+    history.push('/users');
+  }
   
   return (
-    <div>
-      <div className="card">
+    <div className="container">
+      <div className="card my-3">
         <h5 className="card-header">User Details
+        <button className="btn btn-primary float-right mr-3" onClick={goBack}>Back to Users</button>
         </h5>
         <div className="card-body">
           <h5 className="card-title">Name: {user.name}</h5>
