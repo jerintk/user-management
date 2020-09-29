@@ -4,7 +4,6 @@ import { useHistory, useParams } from 'react-router-dom';
 function ViewUser(props) {
 
   const params = useParams();
-  const history = useHistory();
   const [user, setUser] = useState({});
 
   useEffect(() => {
@@ -16,22 +15,11 @@ function ViewUser(props) {
       return null;
     });
   }, [props.users, params.userId]);
-
-
-  function deleteUser(userId) {
-    // props.onDeleteUser(userId);
-  }
-
-  function editUser() {
-    history.push('/users/edit/' + params.userId);
-  }
   
   return (
     <div>
       <div className="card">
         <h5 className="card-header">User Details
-        <button className="btn btn-danger float-right ml-3" onClick={deleteUser(user.userId)}>Delete</button>
-        <button className="btn btn-primary float-right" onClick={editUser}>Edit</button>
         </h5>
         <div className="card-body">
           <h5 className="card-title">Name: {user.name}</h5>
