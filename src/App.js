@@ -30,7 +30,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="container-fluid App">
       <header className="header">
         <h1>User Management</h1>
       </header>
