@@ -17,6 +17,10 @@ function NewUser(props) {
     history.push('/users');
   }
 
+  function goBack() {
+    history.push('/users');
+  }
+
   return (
     <div className="container">
       <div className="my-3 card">
@@ -51,6 +55,7 @@ function NewUser(props) {
               <input type="text" className="form-control" id="country" placeholder="Enter country" onChange={e => setCountry(e.target.value)} />
             </div>
             <button type="submit" className="btn btn-primary">Save</button>
+            <button className="btn btn-danger ml-3" onClick={goBack}>Cancel</button>
           </form>
         </div>
       </div>
